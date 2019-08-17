@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SatyAnand</title>
+<link rel="stylesheet" href="smoothCSS.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+
+var dd,mm,yy,hr,mins,name; // to get user input of deadline and event name
+var x;                     // to set and clear the interval of countdown()
+var deadline;              // to store deadline input as Date object
+
+function countdown()
+{
+  var curTime =new Date();
+  curTime=curTime.getTime();
+  var diff=deadline - curTime;
+  diff=Math.round(diff/1000);
+  if(diff<0)               //if deadline is before the current system
+  {
+    window.alert('Gone are those days!!');
+    clearInterval(x);
+    location.reload();
+  }
+  var sec=diff%60;
+  diff=Math.floor(diff/60);
+  var mi=diff%60;
+  diff=Math.floor(diff/60);
+  var hh=diff%24;
+  var days=Math.floor(diff/24);
+  document.getElementById('Days').innerHTML=((days<10)?'0'+days:days)+':' ;
+  document.getElementById('Hours').innerHTML=((hh<10)?'0'+hh:hh)+':';
+  document.getElementById('Mins').innerHTML=((mi<10)?'0'+mi:mi)+':';
+  document.getElementById('Secs').innerHTML=((sec<10)?'0'+sec:sec);
+
+  if(!sec && !mi && !hh && !days)  //when all are 0, deadline has been reached
+  {
+    clearInterval(x);
+    window.alert('Hey!! Your event '+name+ ' has started!!');
+    location.reload();
+  }
+}
+function startCount()
+{
+  deadline=new Date(2019,07,22,0,0);
+  deadline=deadline.getTime();
+  x=setInterval(countdown,1000);
+}
+startCount();
+</script>
+    </head>
+<body>
+        <nav style=" height:60px; background-color:rgb(255, 255, 255)!important;"class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                <a style="letter-spacing: 2px; font-size: 2rem; "class="navbar-brand" href="#">A<span style="color:crimson;">S</span>tO</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#sec1">Home </a>
+                      <!-- <span class="sr-only">(current)</span> -->
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#sec2">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sec3">EntrePreneur</a>
+                      </li>
+   
+       
+                    <li class="nav-item">
+                            <a class="nav-link" href="#sec4">Interests</a>
+                          </li>
+                          <li class="nav-item">
+                                <a class="nav-link" href="#sec5">Projects</a>
+                              </li>              
+
+                          <li class="nav-item">
+                                <a class="nav-link" href="#sec6">Skills</a>
+                              </li>              
+                              <li class="nav-item">
+                                    <a class="nav-link" href="#sec7">Contact Me</a>
+                                  </li>
+                            </div>
+              </nav>
+
+
+    <section style="background-color: #0F1626;" class="resume-section p-3 p-lg-5 d-flex flex-column"style="margin-top: 50px;"id="sec1" data-text="Section 1" > 
+        <div class="my-auto">
+          
+         
+  <canvas style="z-index: 100; position:absolute; left:0; top:0;"></canvas>
+<center><h1 style="z-index: 1000;  color:white;">
+      <span class="timer" id="Days" style="display:inline; z-index: 100; color:white;">00  </span>
+      <span class="timer" id="Hours" style="display:inline; z-index: 100; color:white;">00 </span>
+      <span class="timer" id="Mins" style="display:inline; z-index: 100; color:white;">00 </span>
+      <span class="timer" id="Secs" style="display:inline; z-index: 100; color:white;">00 </span>
+  </h1> 
+</center>
+<p style="letter-spacing: 0.4rem; font-size:2rem; "class="lead mb-5">View My Page Before It Gets deactive:).</p>
+
+  </div>       
+ </section>
+    <section style="background-color: #6D7993;" id="sec2" class="resume-section p-3 p-lg-5 d-flex flex-column" data-text="Section 2" >
+<!-- <div class="container"> -->
+    <div class="my-auto">
+    
+        <div style=" min-height:80vh; margin-top:auto; box-shadow: 5px 10px 18px #888888;" class=" row jumbotron">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <h3>About me</h3>
+                        <p>
+                            I'm Satyanand Sharma. Currently studying in 2rd year BtecH, Computer Science and Engineering, NIT Trichy.
+                            I love Making my Own Games and play them when I get bore.In Addition to it I love spending time to code and read  codes made by someone else, so ya most of my time I spend in front of My lappy. 
+                                                  </p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 text-center">
+                        <img src="me.jpg" class="circle" alt="" width="235" height="235" style="border-radius: 123px;">
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <h3>Details</h3>
+                        <p>
+                            <strong>Name:</strong><br>
+                           Satyanand(ASTO)<br>
+                            <strong>Age:</strong><br>
+                            19 years<br>
+                            <strong>Location:</strong><br>
+                            Tiruchirappalli, Tamil Nadu, India
+                        </p>
+                    </div>
+                </div>
+    
+                </div>
+            </div>	
+        </div>
+                
+    
+    </section>
+    <section id="sec3" class="resume-section p-3 p-lg-5 d-flex flex-column" data-text="Section 3" > 
+    
+        <div class="my-auto">
+    
+    
+     <div class="card-group">
+        <div class="card">
+          <img class="card-img-top" src="sachin.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Sachin Bansal</h5>
+            <p class="card-text">Sachin Bansal is an Indian technology entrepreneur and an ardent gamer.</p>
+            <p class="card-text"><small onclick="sachin()"style="cursor:pointer; border:1px solid black; padding:0.2rem;"class="text-muted">Know More...</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="ritesh.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Ritesh Agarwal</h5>
+            <p class="card-text">Ritesh Agarwal is an Indian entrepreneur, known for being the founder and CEO of OYO Rooms.</p>
+            <p class="card-text"><small onclick="ritesh()" style="cursor:pointer; border:1px solid black; padding:0.2rem;"class="text-muted">Know More...</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="vivek.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Vivek Ravisankar</h5>
+            <p class="card-text">Vivek Ravisankar is the Co-Founder and CEO at HackerRank, a platform that helps programmers hone their skills and connect with companies.</p>
+            <p class="card-text"><small onclick="vivek()" style="cursor:pointer; border:1px solid black; padding:0.2rem;"class="text-muted">Know More...</small></p>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>    
+    </section>
+    <section id="sec4" class="resume-section p-3 p-lg-5 d-flex flex-column" data-text="Section 4" > 
+        <div class="my-auto">
+
+      <!-- <div class="container"> -->
+<!-- <center><small style="letter-spacing: 0.3rem; "class="text-muted h1 ">INTERESTS :)</small></center> -->
+<div id="carouselExampleCaptions" style="width:100%;"class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+
+        </ol>
+        <div class="carousel-inner">
+                <div class="carousel-item active">
+                        <img style="width:100vh; height: 80vh;" src="code.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Coding</h5>
+                          <p style=" font-weight: 700;">Currently Most of my time I spend on learning new skills and developing projects that can help others in some way.</p>
+                        </div>
+                      </div>      
+             
+        
+            <div class="carousel-item ">
+            <img style="height: 80vh;" src="foot.jpg" class="d-block  w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>FootBall Lover</h5>
+              <p style=" font-weight: 700;">Most of my childhood I've spent on playing football and Our Team achieved 2nd Position in Regionals.</p>
+            </div>
+          </div>
+        
+          <div class="carousel-item">
+            <img style="height: 80vh;"  src="god.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">  
+              <h5>Gaming Geek</h5>
+              <p style=" font-weight: 700;">Whenever I feel like doing nothing then I go for Play Video games which are either made by me Or Company.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+                <img style="height: 80vh;"  src="travel.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">  
+                  <h4 style="color: black; font-weight: 700;"  >Travelling</h4>
+                  <p style="color: white; font-weight: 700;">Whenever I feel like doing nothing and kind of depression then the best remedy I know is to travel some marvellous places which helps to get my mind on Track.</p>
+                </div>
+              </div>
+    
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    
+
+</div>
+    </section>
+
+
+    <section style="background-image:url('back.jpg'); background-repeat: no-repeat;  background-size: cover; " class="resume-section p-3 p-lg-5 d-flex flex-column" id="sec5" data-text="Section 5" > 
+<div class="my-auto">
+
+  <div class="container">
+    <div class="row">
+      <div style="margin:1rem auto;"class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+              <h5 class="card-title"><span style="color:blue; letter-spacing: 1px;">Live Video Call </span></h5>
+              <p class="card-text"><span style="color:red; letter-spacing: 1px;">~></span>This app coverts the audio to text and Saves it to the DataBase which can be viewed Again.</p>
+              <a href="https://github.com/Asto7/videochatasto/tree/demo" class="btn btn-primary" target="_blank">Visit Git Repo!!!</a>
+            </div>
+          </div>
+        </div>
+        <div style="margin:1rem auto;"class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><span style="color:blue; letter-spacing: 1px;">AsTo Forms</span></h5>
+              <p class="card-text"><span style="color:red; letter-spacing: 1px;">~></span>Made a Web App on Nodejs with MongoDb As BAckend which is very Simillar To GooGle Forms.</p>
+              <a href="https://github.com/Asto7/SurveyDT3" class="btn btn-primary" target="_blank">Visit Git Repo!!!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div style="margin:1rem auto;"class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><span style="color:blue; letter-spacing: 1px;">Wallet ManaGer</span></h5>
+                <p class="card-text"><span style="color:red; letter-spacing: 1px;">~></span>Made a Web App on Nodejs with MongoDb As BAckend which helps to keep track Of expenses.</p>
+                <a href="https://github.com/Asto7/wmST2" class="btn btn-primary" target="_blank">Visit Git Repo!!!</a>
+              </div>
+            </div>
+          </div>
+          <div style="margin:1rem auto;"class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><span style="color:blue; letter-spacing: 1px;">Duet & BalL Blasting Game</span></h5>
+                <p class="card-text"><span style="color:red; letter-spacing: 1px;">~></span>Worked on vanilla Js and HTML5 CANVAS to build two Awesome Games with Sounds .</p>
+ <a class="btn btn-primary" target="_blank" href="https://github.com/Asto7/SpiderTask1" onclick="window.open('https://github.com/Asto7/DTask2');return true;">Visit Git Repo!!!</a>
+</div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+    </section>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="sec6" data-text="Section 6" >
+        <div class="my-auto">
+          
+<center>
+          <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-6">
+          <abbr title="HTML"><i class="fab  fa-html5 fa-5x" style="color:#ccc;"></i>
+          </abbr>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <abbr title="GITHUB"><i class="fab fa-github fa-5x" style="color:#ccc;"></i></abbr>
+
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <abbr title="JavaScript"><i class="fab fa-js-square fa-5x" style="color:#ccc;"></i></abbr>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+          <abbr title="NodeJs"><i class="fab fa-node fa-5x fa-5x" style="color:#ccc;"></i></abbr>
+            
+            </div>    <div class="col-lg-2 col-md-4 col-sm-6">
+                <abbr title="CSS"><i class="fab fa-css3-alt fa-5x fa-5x" style="color:#ccc;"></i></abbr>
+              </div>    <div class="col-lg-2 col-md-4 col-sm-6">
+                  <abbr title="NpM"><i class="fab fa-npm fa-5x fa-5x" style="color:#ccc;"></i></abbr>
+                </div>
+          </div>
+          <p style="letter-spacing: 0.4rem; font-size:2rem; "class="lead mb-5">Worked Hard On It.</p>
+        
+        </center>
+
+
+
+
+
+
+
+
+
+
+</div>
+    </section>
+      <section style="background-color:#636B46 " class="resume-section p-3 p-lg-5 d-flex flex-column" id="sec7" data-text="Section 7" > 
+<div class="my-auto">
+    <div style="background-color:#F7F5E6; " class="jumbotron">
+        <h1 class="mb-0">SATYANAND SHARMA</h1>
+          <div class="subheading mb-5">
+              <a href="mailto:ssatyanand7@gmail.com">ssatyanand7@gmail.com</a> | <a href="#sec6">+91 8463037994</a>
+            </div>
+            
+        <p class="lead mb-5">It's Glad to work As a developer to build software That can make life easier.Hope you liked my work And Ya feel free to drop a mail</p>
+        <div style="display:flex; justify-content: center;" class="social-icons">
+          <a style="margin: 2rem;"target="_blank" href="https://in.linkedin.com/in/satyanand-sharma-93006017a?trk=people-guest_profile-result-card_result-card_full-click">
+            <i style="color: black;" class="fa-3x fab fa-linkedin-square" aria-hidden="true"></i>
+          </a>
+          <a style="margin: 2rem;" target="_blank" href="https://github.com/Asto7">
+            <i style="color: black;" class="fab fa-3x fa-github-square" aria-hidden="true"></i>
+          </a>
+          <a style="margin: 2rem;" target="_blank" href="https://www.facebook.com/IceQX">
+            <i style="color: black;" class="fab fa-3x fa-facebook-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+</div>
+      </section>
+      <span type="button" style='display:none;' id='pop-up' class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">CLICK</span>
+
+      <div class="modal" id="myModal">
+          <div class="modal-dialog" >
+           <center><div class="modal-content" style="width:150%;">
+       
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 style="float:right;" class="modal-title">Modal Heading</h4>
+       
+                <img src="..." class="rounded-circle float-right" style="width:100px; right:0;height:100px;"alt="...">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <!-- Modal body -->
+              <div class="modal-body">
+                <span style="display:block;" class="imdb">
+                </span>
+                <span style="display:block;" class="actor">
+       
+                </span>
+                <span style="display:block;" class="director">
+       
+                </span>
+                <span style="display:block;" class="on">
+       
+                </span>
+                <span style="display:block;" class="type">
+       
+                </span>
+                <span style="display:block;" class="genre">
+       
+                </span>
+                <span style="display:block;" class="box">
+       
+                </span>
+       
+              </div>
+       
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+       
+            </div>
+          </center>
+          </div>
+        </div>
+       
+
+      <script src="canvas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script><script>
+// var clientHeight = document.getElementById('sec4').clientHeight;
+//  document.getElementById('sec4').style.height=clientHeight+'px';
+
+
+ function OPEN(){
+
+ window.open('http://facebook.com');
+ window.open('http'+':'+'//google.com');
+ }
+ function sachin(){
+  document.getElementsByClassName('modal-title')[0].innerHTML="Sachin Bansal";
+  document.getElementsByClassName('rounded-circle')[0].src='sachin.jpg';
+  document.getElementsByClassName('director')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Born: </span>'+' August 5, 1981 (age 37)';
+  document.getElementsByClassName('actor')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Net worth: </span>'+'$ 1 billion(May 10, 2018)';
+  document.getElementsByClassName('imdb')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Title: </span>'+'CEO of Flipkart & Executive Chairman of Flipkart';
+  document.getElementsByClassName('on')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Personal Life: </span>'+"Sachin Bansal is married to Priya Bansal, a dentist by training and profession. They have one son.";
+  document.getElementsByClassName('type')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Alma mater: </span>'+" Indian Institute of Technology Delhi";
+  document.getElementsByClassName('genre')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">For More Visit: </span>'+"<a href='https://en.wikipedia.org/wiki/Sachin_Bansal'>WikiPediA</a>";
+  document.getElementsByClassName('box')[0].innerHTML='';
+
+  document.getElementById('pop-up').click();
+}
+ 
+ function ritesh(){
+  //  console.log('df');
+  document.getElementsByClassName('modal-title')[0].innerHTML="Ritesh Agarwal";
+  document.getElementsByClassName('rounded-circle')[0].src='ritesh.jpg';
+  document.getElementsByClassName('director')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Born: </span>'+' 	16 November 1993 (age 25)';
+  document.getElementsByClassName('actor')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Net worth: </span>'+'$2 billion(Approx)';
+  document.getElementsByClassName('imdb')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Known For: </span>'+'CEO of <a href="https://www.oyorooms.com/">OYO Rooms</a>';
+  document.getElementsByClassName('on')[0].innerHTML='';
+  document.getElementsByClassName('type')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Alma mater: </span>'+" Indian School of Business and Finance";
+  document.getElementsByClassName('genre')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">For More Visit: </span>'+"<a href='https://en.wikipedia.org/wiki/Ritesh_Agarwal'>WikiPediA</a>";
+  document.getElementsByClassName('box')[0].innerHTML='';
+  document.getElementById('pop-up').click();
+ }
+ function vivek(){
+  document.getElementsByClassName('modal-title')[0].innerHTML="Vivek Ravisankar";
+  document.getElementsByClassName('rounded-circle')[0].src='vivek.jpg';
+  document.getElementsByClassName('director')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Born: </span>'+' 4 April 1987(32 years)';
+  document.getElementsByClassName('actor')[0].innerHTML='';
+  document.getElementsByClassName('imdb')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Organization founded: </span>'+' <a href="https://www.hackerrank.com/">HackerRank</a>';
+  document.getElementsByClassName('on')[0].innerHTML='';
+  document.getElementsByClassName('type')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">Alma mater: </span>'+"  National Institute of Technology Tiruchirappalli";
+  document.getElementsByClassName('genre')[0].innerHTML='<span style="letter-spacing:1px; color:blue;">For More Visit: </span>'+"<a href='https://en.wikipedia.org/wiki/HackerRank'>WikiPediA</a>";
+  document.getElementsByClassName('box')[0].innerHTML='';
+  document.getElementById('pop-up').click();
+ }
+
+</script>
+</body>
+</html>

@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Lexend+Giga&display=swap" rel="stylesheet">
 <script>
 
 var dd,mm,yy,hr,mins,name; // to get user input of deadline and event name
@@ -25,12 +26,7 @@ function countdown()
   curTime=curTime.getTime();
   var diff=deadline - curTime;
   diff=Math.round(diff/1000);
-  if(diff<0)               //if deadline is before the current system
-  {
-    window.alert('Gone are those days!!');
-    clearInterval(x);
-    location.reload();
-  }
+  // console.log(diff);
   var sec=diff%60;
   diff=Math.floor(diff/60);
   var mi=diff%60;
@@ -51,7 +47,7 @@ function countdown()
 }
 function startCount()
 {
-  deadline=new Date(2019,07,22,0,0);
+  deadline=new Date(2019,09,3,0,0);
   deadline=deadline.getTime();
   x=setInterval(countdown,1000);
 }
@@ -102,42 +98,31 @@ startCount();
          
   <canvas style="z-index: 100; position:absolute; left:0; top:0;"></canvas>
 <center><h1 style="z-index: 1000;  color:white;">
-      <span class="timer" id="Days" style="display:inline; z-index: 100; color:white;">00  </span>
-      <span class="timer" id="Hours" style="display:inline; z-index: 100; color:white;">00 </span>
-      <span class="timer" id="Mins" style="display:inline; z-index: 100; color:white;">00 </span>
-      <span class="timer" id="Secs" style="display:inline; z-index: 100; color:white;">00 </span>
+      <span class="timer" id="Days" style="display:inline; font-size:2.5rem; font-family: 'Lexend Giga', sans-serif; z-index: 100; color:white;">00  </span>
+      <span class="timer" id="Hours" style="display:inline; font-size:2.5rem; font-family: 'Lexend Giga', sans-serif; z-index: 100; color:white;">00 </span>
+      <span class="timer" id="Mins" style="display:inline; font-size:2.5rem; font-family: 'Lexend Giga', sans-serif; z-index: 100; color:white;">00 </span>
+      <span class="timer" id="Secs" style="display:inline; font-size:2.5rem; font-family: 'Lexend Giga', sans-serif; z-index: 100; color:white;">00 </span>
   </h1> 
 </center>
-<p style="letter-spacing: 0.4rem; font-size:2rem; "class="lead mb-5">View My Page Before It Gets deactive:).</p>
+<p style="letter-spacing: 0.4rem; font-size:2rem; "class="lead mb-5">View My Page Before FestemBer Starts:).</p>
 
   </div>       
  </section>
-    <section style="background-color: #6D7993;" id="sec2" class="resume-section p-3 p-lg-5 d-flex flex-column" data-text="Section 2" >
+    <section style="background-color: #32064A;" id="sec2" class="resume-section p-3 p-lg-5 d-flex flex-column" data-text="Section 2" >
 <!-- <div class="container"> -->
     <div class="my-auto">
     
-        <div style=" min-height:80vh; margin-top:auto; box-shadow: 5px 10px 18px #888888;" class=" row jumbotron">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <h3>About me</h3>
-                        <p>
-                            I'm Satyanand Sharma. Currently studying in 2rd year BtecH, Computer Science and Engineering, NIT Trichy.
-                            I love Making my Own Games and play them when I get bore.In Addition to it I love spending time to code and read  codes made by someone else, so ya most of my time I spend in front of My lappy. 
-                                                  </p>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 text-center">
-                        <img src="me.jpg" class="circle" alt="" width="235" height="235" style="border-radius: 123px;">
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <h3>Details</h3>
-                        <p>
-                            <strong>Name:</strong><br>
-                           Satyanand(ASTO)<br>
-                            <strong>Age:</strong><br>
-                            19 years<br>
-                            <strong>Location:</strong><br>
-                            Tiruchirappalli, Tamil Nadu, India
-                        </p>
-                    </div>
+        <div style=" min-height:80vh; margin-top:auto; box-shadow: 5px 10px 18px #aaffc3; background-color:white;" class=" row jumbotron">
+          <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+            <img src="me.jpg" class="circle rounded-circle" alt="" width="250" height="250" style="border-radius: 123px;">
+          </div>
+                          <div style="color:crimson; line-height: 2rem; word-spacing: 1rem; letter-spacing: 0.2rem;"class="col-lg-6 col-md-6 col-sm-6">
+                              <p>
+                                Hey This is Satyanand Sharma. I'm in 2rd year Computer Science and Engineering, NIT Trichy.
+                                  I love Making my Own Games and play them when I get bore.In Addition to it I love spending time to code and read codes made by someone else, so ya most of my time I spend in front of My lappy. 
+                                                        </p>
+                          </div>
+                
                 </div>
     
                 </div>
@@ -345,9 +330,7 @@ startCount();
 <div class="my-auto">
     <div style="background-color:#F7F5E6; " class="jumbotron">
         <h1 class="mb-0">SATYANAND SHARMA</h1>
-          <div class="subheading mb-5">
-              <a href="mailto:ssatyanand7@gmail.com">ssatyanand7@gmail.com</a> | <a href="#sec6">+91 8463037994</a>
-            </div>
+     
             
         <p class="lead mb-5">It's Glad to work As a developer to build software That can make life easier.Hope you liked my work And Ya feel free to drop a mail</p>
         <div style="display:flex; justify-content: center;" class="social-icons">
